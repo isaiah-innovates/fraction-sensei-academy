@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,16 +16,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 221 83% 53%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
+    --secondary: 172 84% 38%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
+    --accent: 24 94% 53%;
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
@@ -30,7 +33,7 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 221 83% 53%;
 
     --radius: 0.5rem;
 
@@ -98,4 +101,69 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.fraction {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.fraction .numerator, .fraction .denominator {
+  display: block;
+  padding: 0.1rem 0.3rem;
+}
+
+.fraction .divider {
+  border-top: 2px solid currentColor;
+  display: block;
+  margin: 0.15rem 0;
+}
+
+.area-model {
+  display: grid;
+  overflow: hidden;
+  border: 2px solid #666;
+}
+
+.number-line {
+  position: relative;
+  height: 6px;
+  background-color: #333;
+  margin: 2rem 0;
+}
+
+.number-line-marker {
+  position: absolute;
+  top: -10px;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 26px;
+  background-color: #666;
+}
+
+.number-line-label {
+  position: absolute;
+  top: 20px;
+  transform: translateX(-50%);
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.number-line-handle {
+  position: absolute;
+  top: -16px;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 32px;
+  background-color: theme('colors.brainlift.orange');
+  border-radius: 50%;
+  cursor: grab;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  user-select: none;
+  z-index: 10;
 }
